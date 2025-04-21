@@ -60,3 +60,5 @@ mongoose.connect(MONGODB_URI)
     console.error('Failed to connect to MongoDB, starting server anyway...', err.message);
     startServer();
   }); 
+
+  //mongodb://localhost:27017/

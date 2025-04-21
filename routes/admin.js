@@ -9,7 +9,7 @@ router.post('/login', adminController.login);
 router.post('/register', adminController.register);
 
 // Get dashboard data
-router.get('/dashboard', adminController.getDashboard);
+router.get('/api/dashboard', adminController.getDashboard);
 
 // Get all enrolled students for courses
 router.get('/enrolled-students', adminController.getEnrolledStudents);
