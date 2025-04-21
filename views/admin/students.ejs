@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Students - Course Enrollment System</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Course Enrollment System</div>
+      <ul>
+        <li><a href="/admin/dashboard">Dashboard</a></li>
+        <li><a href="/admin/dashboard/courses">Courses</a></li>
+        <li><a href="/admin/dashboard/students" class="active">Students</a></li>
+        <li><a href="#" id="logoutBtn">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="dashboard-header">
+      <h1>Manage Students</h1>
+    </section>
+
+    <section class="dashboard-section full-width">
+      <div class="table-container">
+        <table id="studentsTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Enrolled Courses</th>
+              <th>Enrolled Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="studentsTableBody">
+            <tr>
+              <td colspan="6" class="loading">Loading students...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Student Details Modal -->
+  <div id="studentDetailsModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Student Details</h2>
+      <div id="studentDetails">
+        <p><strong>Name:</strong> <span id="studentName"></span></p>
+        <p><strong>Email:</strong> <span id="studentEmail"></span></p>
+        <p><strong>Phone:</strong> <span id="studentPhone"></span></p>
+        <p><strong>Enrolled Since:</strong> <span id="enrolledDate"></span></p>
+        
+        <h3>Enrolled Courses</h3>
+        <div id="enrolledCoursesList">
+          <p class="loading">Loading courses...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 Course Enrollment System. All rights reserved.</p>
+  </footer>
+
+  <script src="/js/students.js"></script>
+</body>
+</html> 

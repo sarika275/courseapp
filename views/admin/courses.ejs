@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Courses - Course Enrollment System</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Course Enrollment System</div>
+      <ul>
+        <li><a href="/admin/dashboard">Dashboard</a></li>
+        <li><a href="/admin/dashboard/courses" class="active">Courses</a></li>
+        <li><a href="/admin/dashboard/students">Students</a></li>
+        <li><a href="#" id="logoutBtn">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="dashboard-header">
+      <h1>Manage Courses</h1>
+      <button id="addCourseBtn" class="btn btn-primary">Add New Course</button>
+    </section>
+
+    <section class="dashboard-section full-width">
+      <div class="table-container">
+        <table id="coursesTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Faculty</th>
+              <th>Duration</th>
+              <th>Seats</th>
+              <th>Enrolled</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="coursesTableBody">
+            <tr>
+              <td colspan="6" class="loading">Loading courses...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Add/Edit Course Modal -->
+  <div id="courseModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="courseModalTitle">Add New Course</h2>
+      <form id="courseForm">
+        <input type="hidden" id="courseId">
+        <div class="form-group">
+          <label for="courseName">Course Name</label>
+          <input type="text" id="courseName" required>
+        </div>
+        <div class="form-group">
+          <label for="courseDescription">Description</label>
+          <textarea id="courseDescription" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="facultyName">Faculty Name</label>
+          <input type="text" id="facultyName" required>
+        </div>
+        <div class="form-group">
+          <label for="seats">Number of Seats</label>
+          <input type="number" id="seats" min="1" required>
+        </div>
+        <div class="form-group">
+          <label for="duration">Duration</label>
+          <input type="text" id="duration" placeholder="e.g. 3 months" required>
+        </div>
+        <button type="submit" class="btn btn-primary" id="courseSubmitBtn">Add Course</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- View Students Modal -->
+  <div id="studentsModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Students Enrolled in <span id="modalCourseName"></span></h2>
+      <div class="table-container">
+        <table id="studentsTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+            </tr>
+          </thead>
+          <tbody id="studentsTableBody">
+            <tr>
+              <td colspan="3" class="loading">Loading students...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 Course Enrollment System. All rights reserved.</p>
+  </footer>
+
+  <script src="/js/courses.js"></script>
+</body>
+</html> 

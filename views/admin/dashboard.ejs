@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Course Enrollment System</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Course Enrollment System</div>
+      <ul>
+        <li><a href="/admin/dashboard" class="active">Dashboard</a></li>
+        <li><a href="/admin/dashboard/courses">Courses</a></li>
+        <li><a href="/admin/dashboard/students">Students</a></li>
+        <li><a href="#" id="logoutBtn">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="dashboard-header">
+      <h1>Admin Dashboard</h1>
+      <p>Welcome, <span id="adminUsername"></span>!</p>
+    </section>
+
+    <section class="dashboard-stats">
+      <div class="stat-card">
+        <h2>Total Courses</h2>
+        <p id="totalCourses">Loading...</p>
+      </div>
+      <div class="stat-card">
+        <h2>Total Students</h2>
+        <p id="totalStudents">Loading...</p>
+      </div>
+    </section>
+
+    <section class="dashboard-content">
+      <div class="dashboard-section">
+        <h2>Recent Courses</h2>
+        <div id="recentCourses" class="dashboard-list">
+          <p class="loading">Loading recent courses...</p>
+        </div>
+      </div>
+
+      <div class="dashboard-section">
+        <h2>Recent Enrollments</h2>
+        <div id="recentEnrollments" class="dashboard-list">
+          <p class="loading">Loading recent enrollments...</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="dashboard-section full-width">
+      <h2>Enrollment Overview</h2>
+      <button id="refreshEnrollmentBtn" class="btn btn-refresh">Refresh Data</button>
+      <div class="table-container">
+        <table id="enrollmentTable">
+          <thead>
+            <tr>
+              <th>Course Name</th>
+              <th>Faculty</th>
+              <th>Total Seats</th>
+              <th>Enrolled</th>
+              <th>Available</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="enrollmentTableBody">
+            <tr>
+              <td colspan="6" class="loading">Loading enrollment data...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- View Students Modal -->
+  <div id="studentsModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Students Enrolled in <span id="modalCourseName"></span></h2>
+      <div class="table-container">
+        <table id="studentsTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+            </tr>
+          </thead>
+          <tbody id="studentsTableBody">
+            <tr>
+              <td colspan="3" class="loading">Loading students...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 Course Enrollment System. All rights reserved.</p>
+  </footer>
+
+  <script src="/js/dashboard.js"></script>
+</body>
+</html> 

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Enrollment System</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Course Enrollment System</div>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/admin/login" id="adminLoginBtn">Admin Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Welcome to Course Enrollment System</h1>
+        <p>Browse and enroll in various courses taught by expert faculty members</p>
+      </div>
+    </section>
+
+    <section class="courses-section">
+      <h2>Available Courses</h2>
+      <div class="courses-container" id="coursesContainer">
+        <!-- Courses will be loaded here dynamically -->
+        <div class="loading">Loading courses...</div>
+      </div>
+    </section>
+
+    <!-- Enrollment Modal -->
+    <div id="enrollmentModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Enroll in <span id="courseName"></span></h2>
+        <p id="courseDescription"></p>
+        <p><strong>Faculty:</strong> <span id="courseFaculty"></span></p>
+        <p><strong>Duration:</strong> <span id="courseDuration"></span></p>
+        <p><strong>Available Seats:</strong> <span id="availableSeats"></span></p>
+        
+        <form id="enrollmentForm">
+          <input type="hidden" id="courseId">
+          <div class="form-group">
+            <label for="studentName">Full Name</label>
+            <input type="text" id="studentName" required>
+          </div>
+          <div class="form-group">
+            <label for="studentEmail">Email</label>
+            <input type="email" id="studentEmail" required>
+          </div>
+          <div class="form-group">
+            <label for="studentPhone">Phone Number</label>
+            <input type="tel" id="studentPhone" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Enroll</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Course Enrollment System. All rights reserved.</p>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html> 

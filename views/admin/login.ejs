@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login - Course Enrollment System</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Course Enrollment System</div>
+      <ul>
+        <li><a href="/">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="auth-section">
+      <div class="auth-container">
+        <h1>Admin Login</h1>
+        <div id="errorMessage" class="error-message"></div>
+        <form id="adminLoginForm">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+        <p class="auth-link">Don't have an account? <a href="#" id="registerLink">Register</a></p>
+      </div>
+    </section>
+
+    <!-- Register Form (Hidden by default) -->
+    <section class="auth-section" id="registerSection" style="display: none;">
+      <div class="auth-container">
+        <h1>Admin Registration</h1>
+        <div id="registerErrorMessage" class="error-message"></div>
+        <form id="adminRegisterForm">
+          <div class="form-group">
+            <label for="regUsername">Username</label>
+            <input type="text" id="regUsername" required>
+          </div>
+          <div class="form-group">
+            <label for="regPassword">Password</label>
+            <input type="password" id="regPassword" required>
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+        <p class="auth-link">Already have an account? <a href="#" id="loginLink">Login</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Course Enrollment System. All rights reserved.</p>
+  </footer>
+
+  <script src="/js/admin.js"></script>
+</body>
+</html> 
